@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 import fonts from '@constants/fonts';
+import colors from '@constants/colors';
 
 export const Container = styled.View`
   flex: 1;
@@ -25,5 +27,23 @@ export const ForgotPasswordText = styled.Text`
   font-family: ${fonts.RobotoSlabRegular};
 `;
 
-export const CreateAccount = styled.TouchableOpacity``;
-export const CreateAccountText = styled.Text``;
+export const CreateAccount = styled.TouchableOpacity`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: ${colors.infoColor};
+  border-top-width: 2px;
+  border-color: #232129;
+  padding: 16px 0 ${8 + getBottomSpace()}px;
+
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+`;
+export const CreateAccountText = styled.Text`
+  color: ${colors.actionColor};
+  font-size: 18px;
+  font-family: ${fonts.RobotoSlabRegular};
+  margin-left: 16px;
+`;
